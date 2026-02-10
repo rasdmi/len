@@ -1,0 +1,14 @@
+@media (max-width: 980px){
+  .nav{ display:none; }
+  .navbtn{ display:block; }
+
+  .page{ padding: 18px 14px 78px; }
+
+  .card__inner{ grid-template-columns: 1fr; }
+  .media{ order: -1; }
+  .media--circle{ width: 180px; margin: 0; }
+
+  .pricing{ grid-template-columns: 1fr; }
+
+  .footer__inner{ flex-direction: column; }
+}
