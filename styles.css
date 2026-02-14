@@ -195,7 +195,7 @@ body{
 .page{
   position: relative;
   z-index: 1;
-  padding: 34px 24px 96px;
+  padding: 34px 24px 32px;
 }
 .section{
   max-width: var(--max);
@@ -431,6 +431,30 @@ h2{ font-size: clamp(26px, 3.2vw, 38px); line-height: 1.1; }
 }
 
 /* Центрируем кнопки */
+#contacts .cta{
+  justify-content: center;
+}
+/* ===== Contacts section centered ===== */
+#contacts .card{
+  max-width: var(--max);     /* как у остальных карточек */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#contacts .split{
+  grid-template-columns: 1fr; /* одна колонка */
+}
+
+#contacts .text{
+  text-align: center;
+}
+
+#contacts .text p{
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #contacts .cta{
   justify-content: center;
 }

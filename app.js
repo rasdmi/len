@@ -148,6 +148,9 @@
   }
 
   // IMPORTANT: build ONCE
-  window.addEventListener('load', build, { once: true });
+ window.addEventListener('load', () => {
+  build(); // генерируем ОДИН раз
+});
+
 
 })();
