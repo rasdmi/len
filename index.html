@@ -1,128 +1,204 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pop-up с Леной Рыбиной</title>
- <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css" />
+  <title>Pop‑up с Леной Рыбиной</title>
+
+  <!-- Source Serif 4 (Cyrillic) – place woff2 in /assets/fonts/ -->
+  <link rel="preload" href="assets/fonts/SourceSerif4-Light.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/SourceSerif4-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="mobile.css" />
 </head>
 <body>
+  <!-- Background doodles (generated in app.js). Must span full page height -->
+  <div class="doodles" id="doodles" aria-hidden="true"></div>
+
   <header class="topbar">
     <div class="container">
-      <div class="brand">
-        <img src="assets/icon.JPG" alt="" class="brand-icon"/>
-        <span>Pop-up с Леной Рыбиной</span>
-      </div>
-      <nav class="nav">
-        <a href="#about">О занятиях</a>
-        <a href="#lena">Обо мне</a>
-        <a href="#popup">Про поп-ап</a>
+      <a class="brand" href="#top">
+        <img class="brand-icon" src="assets/icon.JPG" alt="" />
+        <span class="brand-name">Pop‑up с Леной Рыбиной</span>
+      </a>
+
+      <nav class="nav" aria-label="Навигация">
+        <a href="#classes">О занятиях</a>
+        <a href="#about">Обо мне</a>
+        <a href="#popup">Про поп‑ап</a>
         <a href="#age">8–12</a>
         <a href="#price">Стоимость</a>
         <a href="#contacts">Контакты</a>
       </nav>
+
+      <button class="navbtn" id="navBtn" aria-label="Меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="drawer" id="drawer" hidden>
+      <div class="drawer__panel">
+        <a href="#classes">О занятиях</a>
+        <a href="#about">Обо мне</a>
+        <a href="#popup">Про поп‑ап</a>
+        <a href="#age">8–12</a>
+        <a href="#price">Стоимость</a>
+        <a href="#contacts">Контакты</a>
+      </div>
     </div>
   </header>
 
-  <main class="page">
-    <section id="about" class="card">
-      <div class="split">
-        <div class="text">
-          <h1>Поп-ап мастерская</h1>
-          <p>Короткие занятия, где из листа бумаги появляется объём. Спокойный темп, внимание к процессу и радость открытия.</p>
-        </div>
-        <div class="media">
-          <video src="assets/1.mp4" autoplay muted loop playsinline></video>
-        </div>
-      </div>
-    </section>
+  <main class="page" id="top">
+    <!-- О занятиях -->
+    <section class="section" id="classes">
+      <article class="card">
+        <div class="split">
+          <div class="text">
+            <div class="eyebrow">● О занятиях</div>
+            <h1>Поп‑ап мастерская</h1>
+            <p>
+Короткие занятия, где из листа бумаги появляется объём.
+Мы делаем конструкцию руками, наблюдаем движение и аккуратно доводим идею до «щёлк» — когда всё встало на место.
+Спокойный темп, внимание к процессу и радость открытия.
+            </p>
+            <div class="chips">
+              <span class="chip">онлайн</span>
+              <span class="chip">оффлайн</span>
+              <span class="chip">бережно</span>
+            </div>
+          </div>
 
-    <section id="lena" class="card">
-      <div class="split">
-        <div class="text">
-          <h2>Лена Рыбина</h2>
-          <p>Художница и педагог. Много лет работаю с детьми. Преподаю так, как хотела бы для своих детей: без спешки, с поддержкой и тёплым контактом.</p>
-        </div>
-        <div class="media">
-          <img src="assets/about.jpg" alt="Лена Рыбина"/>
-        </div>
-      </div>
-    </section>
-
-    <section id="popup" class="card">
-      <div class="split">
-        <div class="text">
-          <h2>Зачем поп-ап</h2>
-          <p>Поп-ап — это работа с пространством, формой и движением. Ребёнок думает в объёме, понимает, как из плоского рождается структура. Это живая математика и мягкая инженерия.</p>
-        </div>
-        <div class="media">
-          <img src="assets/poster.jpg" alt="Поп-ап"/>
-        </div>
-      </div>
-    </section>
-
-    <section id="age" class="card">
-      <div class="split">
-        <div class="text">
-          <h2>Для кого 8–12</h2>
-          <p>В этом возрасте дети умеют быть внимательными и свободными одновременно. Можно идти в своём темпе, исследовать форму и не бояться ошибок.</p>
-        </div>
-        <div class="media">
-          <img src="assets/re.jpg" alt="Возраст 8–12"/>
-        </div>
-      </div>
-    </section>
-
-<section id="price" class="card card--no-media">
-      <div class="split">
-        <div class="text">
-          <h2>Стоимость занятий</h2>
-          <p>Разовое занятие, абонемент и индивидуальный формат. Здесь будет актуальная информация о ценах и форматах участия.</p>
-        </div>
-        <div class="media empty"></div>
-      </div>
-    </section>
-
-   <section id="contacts" class="card card--no-media">
-      <div class="split">
-        <div class="text">
-          <h2>Записаться</h2>
-          <p>Напишите мне в Telegram или посмотрите ближайшее мероприятие в канале.</p>
-          <div class="cta">
-            <a class="btn" href="#" target="_blank">Telegram</a>
-            <a class="btn" href="#" target="_blank">Ближайшее событие</a>
+          <div class="media">
+            <div class="media-frame">
+              <video src="assets/1.mp4" autoplay muted loop playsinline preload="metadata"></video>
+            </div>
           </div>
         </div>
-        <div class="media empty"></div>
-      </div>
+      </article>
+    </section>
+
+    <!-- Обо мне -->
+    <section class="section" id="about">
+      <article class="card">
+        <div class="split">
+          <div class="text">
+            <div class="eyebrow">● Обо мне</div>
+            <h2>Лена Рыбина</h2>
+            <p>
+Я художница и педагог. Много лет работаю с детьми и знаю, как важно, чтобы обучение было бережным.
+В занятиях я не «исправляю» — я задаю вопросы, предлагаю варианты и поддерживаю ритм ребёнка.
+Поп‑ап конструкции — моя форма разговора с миром и с детьми: через сгибы, объём и движение.
+            </p>
+          </div>
+
+          <div class="media">
+            <img class="media-photo" src="assets/about.jpg" alt="Лена Рыбина" loading="lazy" />
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Про поп-ап -->
+    <section class="section" id="popup">
+      <article class="card">
+        <div class="split">
+          <div class="text">
+            <div class="eyebrow">● Про поп‑ап</div>
+            <h2>Зачем детям поп‑ап</h2>
+            <p>
+Поп‑ап — это не просто «красивые книжки». Это работа с пространством, формой и логикой движения.
+Ребёнок учится думать в объёме: как плоский лист превращается в структуру, как части зависят друг от друга и почему сгиб запускает движение.
+Это развивает архитектурное мышление, пространственное воображение и мягкую инженерную логику.
+            </p>
+          </div>
+
+          <div class="media">
+            <img class="media-photo" src="assets/poster.jpg" alt="Поп‑ап пример" loading="lazy" />
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 8-12 -->
+    <section class="section" id="age">
+      <article class="card">
+        <div class="split">
+          <div class="text">
+            <div class="eyebrow">● 8–12</div>
+            <h2>Для кого 8–12</h2>
+            <p>
+Это возраст, когда руки уже умеют, а сердце всё ещё играет.
+Дети могут быть внимательными и свободными одновременно: выдерживать процесс и не терять радости.
+Мы работаем в своём темпе, без сравнения и спешки — важен процесс и понимание, как «из плоского рождается объём».
+Если ребёнок младше — возможен пробный короткий формат. Если старше — скоро появятся подростковая и взрослая группы.
+            </p>
+          </div>
+
+          <div class="media">
+            <img class="media-photo" src="assets/re.jpg" alt="Пример для 8–12" loading="lazy" />
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Стоимость -->
+    <section class="section" id="price">
+      <article class="card card--no-media">
+        <div class="split">
+          <div class="text">
+            <div class="eyebrow">● Стоимость</div>
+            <h2>Стоимость занятий</h2>
+            <p class="price">
+              <strong>Индивидуально</strong>
+              <span class="price__main">2500₽</span>
+            </p>
+            <p class="notes">
+              2500₽ — будние дни, 1,5 часа.<br>
+              3200₽ — воскресенье, 1,5 часа.
+            </p>
+
+            <div class="priceGrid">
+              <div class="priceCard">
+                <div class="priceCard__title">Формат</div>
+                <div class="priceCard__text">онлайн / оффлайн</div>
+              </div>
+              <div class="priceCard">
+                <div class="priceCard__title">Материалы</div>
+                <div class="priceCard__text">бумага, ножницы, клей (список пришлю)</div>
+              </div>
+              <div class="priceCard">
+                <div class="priceCard__title">Темп</div>
+                <div class="priceCard__text">спокойно, с паузами и поддержкой</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Контакты -->
+    <section class="section" id="contacts">
+      <article class="card card--no-media">
+        <div class="split">
+          <div class="text center">
+            <div class="eyebrow">● Контакты</div>
+            <h2>Записаться</h2>
+            <p>
+Напишите мне в Telegram — отвечу, подберём формат и время.
+Или посмотрите ближайшее мероприятие в канале.
+            </p>
+
+            <div class="cta center">
+              <a class="btn btn--tg" href="https://t.me/" target="_blank" rel="noopener">Telegram</a>
+              <a class="btn" href="https://t.me/" target="_blank" rel="noopener">Ближайшее событие</a>
+            </div>
+          </div>
+        </div>
+      </article>
     </section>
   </main>
 
   <script src="app.js"></script>
 </body>
-<!-- Doodles background (scrolls with the page) -->
-<div id="doodles" class="doodles" aria-hidden="true"></div>
-
-<div class="doodles" aria-hidden="true">
-  <svg class="doodles__svg" viewBox="0 0 1440 900" preserveAspectRatio="none">
-    <!-- yellow -->
-    <path class="dl dl--y" d="M60,180 C260,60 380,280 560,190 S920,120 1140,240 1320,360 1420,220" />
-    <circle class="dot dot--y" cx="60" cy="180" r="8" />
-    <circle class="dot dot--y" cx="1420" cy="220" r="8" />
-
-    <!-- red -->
-    <path class="dl dl--r" d="M80,720 C220,560 420,760 620,640 S980,540 1140,680 1340,820 1440,700" />
-    <circle class="dot dot--r" cx="80" cy="720" r="7" />
-    <circle class="dot dot--r" cx="1440" cy="700" r="7" />
-
-    <!-- blue -->
-    <path class="dl dl--b" d="M-20,420 C180,520 260,320 420,420 S700,520 860,420 1120,300 1460,420" />
-    <circle class="dot dot--b" cx="420" cy="420" r="6" />
-    <path class="x x--b" d="M1120 300 l22 22 M1142 300 l-22 22" />
-  </svg>
-</div>
-
 </html>

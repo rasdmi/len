@@ -1,11 +1,14 @@
-Pop-up с Леной Рыбиной — one-page (Tilda-like)
+Куда положить медиа
+- assets/icon.JPG
+- assets/about.jpg
+- assets/poster.jpg
+- assets/re.jpg
+- assets/1.mp4
 
-1) Положи медиа в папку assets:
-- 12.mp4        — фон (видео + blur + затемнение)
-- about.mp4     — видео Лены в кружочке (опционально)
-- li.png        — картинка-заглушка (если видео нет)
+Шрифт (Source Serif 4):
+- assets/fonts/SourceSerif4-Light.woff2
+- assets/fonts/SourceSerif4-Regular.woff2
+(если у тебя только .ttf/.otf — конвертируй в woff2 или замени @font-face в styles.css)
 
-2) Тексты/цены/ссылки правь в content.json
-
-Важно:
-- Открывай через локальный сервер (VS Code Live Server), иначе content.json может не грузиться из-за CORS.
+Где менять ссылки:
+- Контакты -> в index.html в блоке #contacts (две ссылки Telegram)
