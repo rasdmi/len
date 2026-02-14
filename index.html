@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pop-up с Леной Рыбиной</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="topbar">
@@ -76,7 +76,7 @@
       </div>
     </section>
 
-    <section id="price" class="card">
+<section id="price" class="card card--no-media">
       <div class="split">
         <div class="text">
           <h2>Стоимость занятий</h2>
@@ -86,7 +86,7 @@
       </div>
     </section>
 
-    <section id="contacts" class="card">
+   <section id="contacts" class="card card--no-media">
       <div class="split">
         <div class="text">
           <h2>Записаться</h2>
@@ -103,4 +103,26 @@
 
   <script src="app.js"></script>
 </body>
+<!-- Doodles background (scrolls with the page) -->
+<div id="doodles" class="doodles" aria-hidden="true"></div>
+
+<div class="doodles" aria-hidden="true">
+  <svg class="doodles__svg" viewBox="0 0 1440 900" preserveAspectRatio="none">
+    <!-- yellow -->
+    <path class="dl dl--y" d="M60,180 C260,60 380,280 560,190 S920,120 1140,240 1320,360 1420,220" />
+    <circle class="dot dot--y" cx="60" cy="180" r="8" />
+    <circle class="dot dot--y" cx="1420" cy="220" r="8" />
+
+    <!-- red -->
+    <path class="dl dl--r" d="M80,720 C220,560 420,760 620,640 S980,540 1140,680 1340,820 1440,700" />
+    <circle class="dot dot--r" cx="80" cy="720" r="7" />
+    <circle class="dot dot--r" cx="1440" cy="700" r="7" />
+
+    <!-- blue -->
+    <path class="dl dl--b" d="M-20,420 C180,520 260,320 420,420 S700,520 860,420 1120,300 1460,420" />
+    <circle class="dot dot--b" cx="420" cy="420" r="6" />
+    <path class="x x--b" d="M1120 300 l22 22 M1142 300 l-22 22" />
+  </svg>
+</div>
+
 </html>
